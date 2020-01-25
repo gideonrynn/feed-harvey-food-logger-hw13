@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# local folders
+instructions
+config/connection.js
+views/instructions.txt

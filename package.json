@@ -1,0 +1,29 @@
+{
+  "name": "burgerlogger",
+  "version": "1.0.0",
+  "description": "App lets users input burgers they'd like to eat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gideonrynn/burger-logger-scd-hw13.git"
+  },
+  "keywords": [
+    "burgerapp",
+    "burger"
+  ],
+  "author": "Sarah Dillard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gideonrynn/burger-logger-scd-hw13/issues"
+  },
+  "homepage": "https://github.com/gideonrynn/burger-logger-scd-hw13#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.18.1"
+  }
+}

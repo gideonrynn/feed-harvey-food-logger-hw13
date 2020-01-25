@@ -1,0 +1,21 @@
+<style media="screen">
+  li {
+    background-color: lightskyblue;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 50%;
+    font-family: sans-serif;
+  }
+</style>
+
+{{!--  {{{ }}} refers to the master, {{ }} refers to the child (or children) --}}
+
+<h1>optional</h1>
+
+<ul>
+{{!-- [insert name] is an array of data, so #each command is needed --}}
+{{#each insertname }}
+  <li>{{ name }}</li>
+{{/each}}
+<hr>
+</ul>
