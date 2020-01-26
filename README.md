@@ -2,8 +2,8 @@
 This is a Git Hub repository for the NU Coding Bootcamp Burger Logger with MySQL, Node, Express, Handlebars, ORM Homework for Week 13.
 
 
-![burger app screenshot](assets/images/burgerapp.jpg)
-![burger app gif](assets/images/burgerapp.gif)
+![burger app screenshot](public/assets/images/burgerapp.jpg)
+![burger app gif](public/assets/images/burgerapp.gif)
 
 # Deployed Application Link
 *enter heroku link
@@ -17,7 +17,7 @@ Once logged in with [GitHub account](https://github.login/), clone the repo loca
   git clone https://github.com/gideonrynn/teampacr-profile-generator-hw7.git
 ```
 
-Update password and database to local database for mysql connection. Example seed and schema in test files folder. 
+Update password and database to local database for mysql connection. Example seed and schema in the db folder.
 
 Also see: [Cloning a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 

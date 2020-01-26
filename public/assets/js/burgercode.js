@@ -1,0 +1,1 @@
+console.log(`Connected to burgercode.js`)

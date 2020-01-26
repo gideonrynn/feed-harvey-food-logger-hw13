@@ -6,8 +6,12 @@
 //   * `updateOne()`
 // * Export the ORM object in `module.exports`.
 
-const connection = require("./config/connection");
+console.log(`Connected to orm.js`);
 
+//import my sql connection
+const connection = require("../config/connection");
+
+//orm variable is an object that holds all the functions that iwll be used 
 const orm = {
 
     selectAll() {

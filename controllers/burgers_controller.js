@@ -6,6 +6,8 @@
 //    * `burger.js`
 // 4. Create the `router` for the app, and export the `router` at the end of your file.
 
+console.log(`Connected to burgers_controller.js`);
+
 const express = require("express");
 const burgerjs = require("../models/burger");
 
@@ -16,16 +18,24 @@ const router = express.Router()
 router.use(function timeLog (req, res, next) {
   console.log('Time: ', Date.now())
   next()
-})
+});
+
 // define the home page route
 router.get('/', function (req, res) {
-  res.send('Birds home page')
-})
-// define the about route
-router.get('/about', function (req, res) {
-  res.send('About birds')
-})
+  // res.send('This is the homepage')
 
-//**end example from documentation */
+  // res.render("index", tbd);
+  res.render("index");
+  
+});
+
+router.post("/api/burgers", function(req, res) {
+  // need req.body with variables
+});
+
+router.delete("/api/burgers/:id", function(req, res) {
+  // need req.params.id
+});
+
 
 module.exports = router;
