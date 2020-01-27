@@ -1,17 +1,12 @@
-//5
-// 1. Inside your `burger` directory, create a folder named `controllers`.
-// 2. In `controllers`, create the `burgers_controller.js` file.
-// 3. Inside the `burgers_controller.js` file, import the following:
-//    * Express
-//    * `burger.js`
-// 4. Create the `router` for the app, and export the `router` at the end of your file.
+//**In Progress */
+//Set up initial get route at index
+//see documentation at http://expressjs.com/en/guide/routing.html
 
 console.log(`Connected to burgers_controller.js`);
 
 const express = require("express");
-const burgerjs = require("../models/burger");
+const burgerMod = require("../models/burger");
 
-//**from documentation at http://expressjs.com/en/guide/routing.html
 const router = express.Router()
 
 // middleware that is specific to this router
@@ -22,10 +17,22 @@ router.use(function timeLog (req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
-  // res.send('This is the homepage')
 
+  // res.send('This is the homepage')
   // res.render("index", tbd);
-  res.render("index");
+
+  //take the callback defined in models, and the data collected from sql, and send it to the index
+  burgerMod.selectAllMod(function(data) {
+
+    //create object that will be rendered in handlebars index with the data pulled back from the db
+    const datatorender = {
+      burgersObj: data
+    };
+
+    //send object to index
+    res.render("index", datatorender);
+
+  })
   
 });
 

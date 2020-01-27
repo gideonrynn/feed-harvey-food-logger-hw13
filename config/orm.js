@@ -1,21 +1,32 @@
-// 3. Create an `orm.js` file inside `config` directory.
-// * Import (require) `connection.js` into `orm.js`
-// * In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
-//   * `selectAll()`
-//   * `insertOne()`
-//   * `updateOne()`
-// * Export the ORM object in `module.exports`.
-
+//**In Progress */
 console.log(`Connected to orm.js`);
 
 //import my sql connection
 const connection = require("../config/connection");
 
+//think about the helper functions, defined in the last exercise
+
 //orm variable is an object that holds all the functions that iwll be used 
 const orm = {
 
-    selectAll() {
-        console.log(`this is the select all method`);
+    //query database for all data from the BURGER table
+    //function will take in the specific table and callback function identified in the model(?)
+    selectAllORM: function(tb, cb) {
+
+        console.log(`SelectAll method called`);
+
+        //define select all query that will grab everything from the BURGERS table in the db
+        const saQuery = "select * from " + tb + ";";
+
+        connection.query(saQuery, function(err, res) {
+
+            if (err) { throw err };
+      
+            //run callback that will pass in the data that comes back from the query
+            cb(res);
+
+        });
+        
     },
 
     insertOne() {
@@ -28,4 +39,5 @@ const orm = {
 
 }
 
+//export so it can be accessed from other files
 module.exports = orm;

@@ -1,12 +1,59 @@
 
-{{!--  {{{ }}} refers to the master, {{ }} refers to the child (or children) --}}
+<div class="jumbotron">
 
-<h1>optional</h1>
+  <p class="lead">This is a burger app so:</p>
+  <h1 class="display-4">Eat Da Burger</h1>
+  
+</div>
 
-<ul>
-{{!-- [insert name] is an array of data, so #each command is needed --}}
-{{#each insertname }}
-  <li>{{ name }}</li>
-{{/each}}
-<hr>
-</ul>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col">
+
+    {{!-- add form that will be used to submit data --}}
+    {{!-- will need to have  --}}
+
+    </div>
+
+  </div>
+  
+  <div class="row">
+
+    <div class="col-6">
+      {{!-- add list of items that have not been devoured here --}}
+      {{!-- when a database item devoured is marked as false, goes in this space --}}
+
+      <ol>
+        {{!-- Use each to display every item in the [insertname] array --}}
+        {{#each burgersObj }}
+
+        <li>{{ burger_name }}</li>
+
+        {{/each}}
+        
+        {{!-- <hr> --}}
+      </ol>
+
+    </div>
+
+    <div class="col-6">
+      {{!-- add list of items that have not been devoured here --}}
+      {{!-- when a database item devoured is marked as false, goes in this space --}}
+      <ul>
+        {{!-- Use each to display every item in the [insertname] array --}}
+        {{#each burgersObj }}
+
+        <li>{{ burger_name }}</li>
+
+        {{/each}}
+
+        {{!-- <hr> --}}
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
