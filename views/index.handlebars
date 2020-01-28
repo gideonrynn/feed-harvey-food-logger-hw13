@@ -1,59 +1,99 @@
 
 <div class="jumbotron">
 
-  <p class="lead">This is a burger app so:</p>
-  <h1 class="display-4">Eat Da Burger</h1>
+  <p class="lead">This is Harvey</p>
+  <h3 class="display-6">Harvey is Hungry</h2>
+  <h1 class="display-2">Feed Harvey</h1>
   
 </div>
 
 <div class="container">
 
-  <div class="row">
+  <div class="row mx-auto">
 
-    <div class="col">
+    <div class="col col-submit">
 
-    {{!-- add form that will be used to submit data --}}
-    {{!-- will need to have  --}}
+      {{!-- <h3>Add food for Harvey:</h3> --}}
+          
+      <form class="">
 
+        <div class="form-group">
+
+          <textarea type="text" id="food" rows="2"></textarea>
+        
+        </div>
+
+      </form>
+
+      <button class="btn btn-info" type="button">Add food</button>
+        
     </div>
-
+      
   </div>
   
   <div class="row">
+    
 
-    <div class="col-6">
-      {{!-- add list of items that have not been devoured here --}}
-      {{!-- when a database item devoured is marked as false, goes in this space --}}
+    {{!-- Col Not-Devoured --}}
 
-      <ol>
-        {{!-- Use each to display every item in the [insertname] array --}}
-        {{#each burgersObj }}
+        <div class="col-4">
+          {{!-- add list of items that have not been devoured here --}}
+          {{!-- when a database item devoured is marked as false, goes in this space --}}
 
-        <li>{{ burger_name }}</li>
+          <h4>To feed:</h4>
 
-        {{/each}}
+          <ol>
+            {{!-- Use each to display every item in the [insertname] array --}}
+            {{#each burgersObj }}
+            {{#unless devoured}}
+
+            <li>{{ burger_name }}</li>
+
+             {{/unless}}
+
+            {{/each}}
+
+          </ol>
         
-        {{!-- <hr> --}}
-      </ol>
+        </div>
 
-    </div>
 
-    <div class="col-6">
-      {{!-- add list of items that have not been devoured here --}}
-      {{!-- when a database item devoured is marked as false, goes in this space --}}
-      <ul>
-        {{!-- Use each to display every item in the [insertname] array --}}
-        {{#each burgersObj }}
+         {{!-- Column Harvey --}}
+      
+      {{!-- https://happydorid.tumblr.com/post/148484344109/plant-friend --}}
 
-        <li>{{ burger_name }}</li>
+      <div class="col-4">
 
-        {{/each}}
+        <img id="harvey" src="/assets/images/harvey.jpg">
 
-        {{!-- <hr> --}}
-      </ul>
+      </div>
 
-    </div>
 
+        {{!-- Col Devoured --}}
+
+        <div class="col-4">
+
+          {{!-- add list of items that have not been devoured here --}}
+          {{!-- when a database item devoured is marked as false, goes in this space --}}
+
+          <h4>Fed:</h4>
+
+          <ol>
+            {{!-- Use each to display every item in the [insertname] array --}}
+            {{#each burgersObj }}
+              {{#if devoured}}
+                <li>{{ burger_name }}</li>
+              {{/if}}
+            {{/each}}
+
+            {{!-- <hr> --}}
+          </ol>
+
+        </div>
+
+
+  {{!-- end row --}}
   </div>
+
 
 </div>

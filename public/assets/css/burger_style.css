@@ -8,7 +8,28 @@ body {
     color: black;
     border-radius: 0;
     border-bottom: 10px solid black;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
   }
+
+  /* textarea {
+    width: 300px;
+    height: 150px;
+  } */
+
+  .col-submit {
+    display: flex;
+    margin: auto;
+    text-align: center;
+  }
+
+  #harvey {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+  }
+  
   
 /* li {
     background-color: lightskyblue;

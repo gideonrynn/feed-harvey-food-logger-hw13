@@ -13,7 +13,7 @@ const orm = {
     //function will take in the specific table and callback function identified in the model(?)
     selectAllORM: function(tb, cb) {
 
-        console.log(`SelectAll method called`);
+        console.log(`SelectAllORM called`);
 
         //define select all query that will grab everything from the BURGERS table in the db
         const saQuery = "select * from " + tb + ";";
