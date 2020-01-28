@@ -1,9 +1,9 @@
-# burger_logger_scd_hw12
+# feed-harvey-food-logger-scd-hw12
 This is a Git Hub repository for the NU Coding Bootcamp Burger Logger with MySQL, Node, Express, Handlebars, ORM Homework for Week 13.
 
 
-![burger app screenshot](public/assets/images/burgerapp.jpg)
-![burger app gif](public/assets/images/burgerapp.gif)
+![feed harvey app screenshot](public/assets/images/feedharveyapp.jpg)
+![feed harvey app gif](public/assets/images/feedharveyapp.gif)
 
 # Deployed Application Link
 *enter heroku link
@@ -11,20 +11,30 @@ This is a Git Hub repository for the NU Coding Bootcamp Burger Logger with MySQL
 
 # Setup
 
-Once logged in with [GitHub account](https://github.login/), clone the repo locally using link:
+1. Once logged in with [GitHub account](https://github.login/), clone the repo locally using link:
 
+  ```sh
+    git clone https://github.com/gideonrynn/teampacr-profile-generator-hw7.git
+  ```
+
+2. Install dependencies:
 ```sh
-  git clone https://github.com/gideonrynn/teampacr-profile-generator-hw7.git
+  npm i
 ```
 
-Update password and database to local database for mysql connection. Example seed and schema in the db folder.
+3. Load feedharvey-schema and update password in connection file. 
+
+    (Optional) To test with seed file, load feedharvey-seed from /db folder and follow instructions. 
+
+4. Run in command line with node server.js
+
 
 Also see: [Cloning a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
 
 # Usage
 
-Eat-Da-Burger is a burger restaurant app that uses node, handlebars, express and mysql. It allows users to add burgers to the site and click devour to indicate they have been eaten. All burgers - devoured or not - will be stored in a sql database.
+The Feed Harvey app is a plant-feeding app that uses node, handlebars, express and mysql. It allows users to add food to the site and click a button to indicate the food they entered has been eaten by the plant. All food - devoured or not - will be stored in a sql database.
 
 Application can initiated in the command line. For this example, Heroku is used the run the application in the browser.
 

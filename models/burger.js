@@ -11,7 +11,7 @@ const burger = {
     //set function that will pass the burger table and callback function into the orm call so that it may run the query and return data from the database
     selectAllMod: function(cb) {
 
-        orm.selectAllORM("burgers", function(res) {
+        orm.selectAllORM("food", function(res) {
             
             cb(res);
 
