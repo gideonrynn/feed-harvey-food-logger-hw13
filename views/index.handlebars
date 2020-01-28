@@ -4,19 +4,32 @@
   <p class="lead">This is Harvey</p>
   <h3 class="display-6">Harvey is Hungry</h2>
   <h1 class="display-2">Feed Harvey</h1>
-{{!-- 
-    <form class="">
 
-        <div class="form-group">
+  <div id="forminput" class="justify-content-center">
+    
+    <form class="form input">
+
+        {{!-- <div class="form-group">
 
           <textarea type="text" id="food" rows="2"></textarea>
         
+        </div> --}}
+
+        <div class="input-group">
+          
+          <input class="form-control">
+
+          <span class="input-group-btn">
+              <button class="btn btn-info" type="button">Add to Feed</button>
+          </span>
         </div>
 
       </form>
 
-      <button class="" type="button">Add food</button> --}}
-        
+  </div>
+
+
+
   
 </div>
 
@@ -42,7 +55,7 @@
           {{!-- add list of items that have not been devoured here --}}
           {{!-- when a database item devoured is marked as false, goes in this space --}}
 
-          <h4>To feed:</h4>
+          <h4>Feed:</h4>
 
           <ol>
             {{!-- Use each to display every item in the [insertname] array --}}

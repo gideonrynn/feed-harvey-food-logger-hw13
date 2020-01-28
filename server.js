@@ -21,7 +21,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.use(express.static("public"));
 
 //Import routes and give the server access to them
-const routes = require("./controllers/burgers_controller");
+const routes = require("./controllers/feedharvey_controller");
 
 //use the routes exported from the controller.js
 app.use(routes);

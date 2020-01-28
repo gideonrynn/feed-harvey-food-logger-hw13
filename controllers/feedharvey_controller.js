@@ -2,10 +2,10 @@
 //Set up initial get route at index
 //see documentation at http://expressjs.com/en/guide/routing.html
 
-console.log(`Connected to burgers_controller.js`);
+console.log(`Connected to feedharvey_controller.js`);
 
 const express = require("express");
-const burgerMod = require("../models/burger");
+const burgerMod = require("../models/feedharvey_mod");
 
 const router = express.Router()
 

@@ -4,7 +4,7 @@ body {
 
 .jumbotron {
     text-align: center;
-    background-color: #99b3ff;
+    background-color: #8FBC8F;
     color: black;
     border-radius: 0;
     border-bottom: 10px solid black;
@@ -28,6 +28,16 @@ body {
     width: 200px;
     height: 200px;
     margin: auto;
+  }
+
+  #forminput {
+    display: flex;
+    padding: 10px;
+  }
+
+  .input {
+    padding: 0px;
+    margin: 0px;
   }
   
   
