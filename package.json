@@ -1,7 +1,7 @@
 {
-  "name": "burgerlogger",
+  "name": "feedharveyfoodlogger",
   "version": "1.0.0",
-  "description": "App lets users input burgers they'd like to eat",
+  "description": "App lets users feed harvey all kinds of food",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,8 @@
     "url": "git+https://github.com/gideonrynn/burger-logger-scd-hw13.git"
   },
   "keywords": [
-    "burgerapp",
-    "burger"
+    "foodapp",
+    "food"
   ],
   "author": "Sarah Dillard",
   "license": "MIT",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/gideonrynn/burger-logger-scd-hw13#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mysql": "^2.18.1"

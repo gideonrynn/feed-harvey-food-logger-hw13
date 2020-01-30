@@ -1,28 +1,44 @@
-console.log(`Connected to burgercode.js`);
+console.log(`Connected to script.js`);
 
 $(function () {
 
-    $(".create-form").on("submit", function(event) {
+    //any time the a feed button is clicked 
+    $(".feed-harvey").click(function(){
+        var harvey = $("#harvey");
+        harvey.animate({
+        height: '+=15px',
+        width: '+=15px'
+      }, 'slow');
+    })
+
+    $("#add").on("click", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
+
+        // console.log($("#addfeed").val())
     
-        var newCat = {
-          name: $("#ca").val().trim(),
-          sleepy: $("[name=sleepy]:checked").val().trim()
+        var foodEntry = {
+          food: $("#addfeed").val(),
+          devoured: 0
         };
-    
+
+
+        console.log(foodEntry);
+        // console.log(foodEntry.food);
+        // console.log(foodEntry.devoured);
+
         // Send the POST request.
-        $.ajax("/api/cats", {
+        $.ajax("/api/food", {
           type: "POST",
-          data: newCat
-          
+          data: foodEntry
         }).then(
           function() {
-            console.log("created new cat");
+            console.log("created new food item");
             // Reload the page to get the updated list
             location.reload();
           }
         );
       });
+
 
 });
