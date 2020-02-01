@@ -1,9 +1,8 @@
 // console.log(`Connected to script.js`);
 
 $(function () {
-
-  // let harveyWxH = "100px";
-  // $('#harvey').css({'width' : harveyWxH , 'height' : harveyWxH});
+  
+  // $(".feedme").css("visibility", 'visible').fadeIn(2000).fadeOut(2000)
 
 
   $("#add").on("click", function(event) {
@@ -38,18 +37,16 @@ $(function () {
 
   //when any feedharvey button is clicked...
   $(".feed-harvey").on("click", function(event) {
-
-    //harvey img grow 15px bigger than existing size
-    let harvey = $("#harvey");
-    harvey.animate({
-    height: '+=' + '15' + 'px',
-    width: '+=' + '15' + 'px'
-    }, 'slow');
-
-    
-
     //prevent actions from click until add button is explicitly clicked
     event.preventDefault();
+
+    //harvey img grow 15px bigger than existing size
+    // let harvey = $("#harvey");
+    // harvey.animate({
+    // height: '+=' + '15' + 'px',
+    // width: '+=' + '15' + 'px'
+    // }, 'slow');
+    
 
     //grab the id of the button clicked
     let id = $(this).data("id");

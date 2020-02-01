@@ -105,6 +105,6 @@ dist
 
 # local folders
 instructions
-config/connection.js
+config/p.js
 views/instructions.txt
 z-overview

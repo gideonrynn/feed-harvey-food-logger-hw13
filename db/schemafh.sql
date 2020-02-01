@@ -15,3 +15,5 @@ devoured boolean default false,
 PRIMARY KEY(id)
 );
 
+SELECT * FROM feedharvey_db.food;
+

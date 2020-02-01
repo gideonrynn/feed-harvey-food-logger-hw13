@@ -4,7 +4,7 @@
 
 const connection = require("../config/connection");
 
-//create an array of question marks = to the number of values  into the sql query
+//create an array of question marks = to the number of values (will ultimately go into the sql query as placeholders)
 function createQMs(valueLength) {
 
     let allMarks = [];
