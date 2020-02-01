@@ -49,6 +49,10 @@ This project was built using:
   - [MySQL ^2.18.1](https://www.npmjs.com/package/mysql)
   
 
+# Acknowledgements
+
+Plant friend art by Heather Penn
+https://happydorid.tumblr.com/post/148484344109/plant-friend 
 
 # License
 
