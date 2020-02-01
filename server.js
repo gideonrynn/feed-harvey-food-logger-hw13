@@ -1,4 +1,3 @@
-//**Complete */
 
 //dependencies
 const express = require("express");
@@ -35,8 +34,8 @@ app.use(routes);
 // parse application/json
 app.use(bodyParser.json());
 
-// Start server so that it is listening for client requests.
+// Start server so that it is listening for client requests
 app.listen(PORT, function() {
-    // Log (server-side) when our server has started
+  
     console.log("Server listening on: http://localhost:" + PORT);
   });

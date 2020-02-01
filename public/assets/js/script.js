@@ -2,6 +2,10 @@
 
 $(function () {
 
+  // let harveyWxH = "100px";
+  // $('#harvey').css({'width' : harveyWxH , 'height' : harveyWxH});
+
+
   $("#add").on("click", function(event) {
        
     //prevent actions from click until add button is explicitly clicked
@@ -32,46 +36,43 @@ $(function () {
 
   });
 
-  //when the feed harvey button is clicked
-  $(".feed-harvey").on("click", function() {
+  //when any feedharvey button is clicked...
+  $(".feed-harvey").on("click", function(event) {
 
     //harvey img grow 15px bigger than existing size
     let harvey = $("#harvey");
-      harvey.animate({
-      height: '+=15px',
-      width: '+=15px'
-      }, 'slow');
+    harvey.animate({
+    height: '+=' + '15' + 'px',
+    width: '+=' + '15' + 'px'
+    }, 'slow');
 
-    });
-
-    //when any feedharvey button is clicked...
-    $(".feed-harvey").on("click", function(event) {
-
-      //prevent actions from click until add button is explicitly clicked
-      event.preventDefault();
-
-      //grab the id of the button clicked
-      let id = $(this).data("id");
     
-      // set devoured value to true
-      let devouredTrue = {
-        devoured: 1
-      };
-    
-      // Send put request and pass on data to put route
-      $.ajax("/api/food/" + id, {
-        type: "PUT",
-        data: devouredTrue
 
-      }).then(
+    //prevent actions from click until add button is explicitly clicked
+    event.preventDefault();
+
+    //grab the id of the button clicked
+    let id = $(this).data("id");
+    
+    // set devoured value to true
+    let devouredTrue = {
+      devoured: 1
+    };
+    
+    // Send put request and pass on data to put route
+    $.ajax("/api/food/" + id, {
+      type: "PUT",
+      data: devouredTrue
+
+    }).then(
       
-        function() {
+      function() {
 
-          // reload page for updated lists
-          location.reload();
-        }
+        // reload page for updated lists
+        location.reload();
+      }
 
-      );
+    );
 
   });
 

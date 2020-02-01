@@ -16,9 +16,21 @@ router.get('/', function (req, res) {
   //take data collected from sql, and send it to the index
   foodMod.modselectAll(function(data) {
 
+    let devoured = [];
+  
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].devoured === 1) {
+        devoured.push(data[i].devoured);
+      }
+    }
+
+    let valSize = (devoured.length * 11) + 92 + 'px';
+    
+
     //create object that will be rendered in handlebars index with the data pulled back from the db
     let datatorender = {
-      foodObj: data
+      foodObj: data,
+      imgSize: valSize
     };
 
     //send object to index

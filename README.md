@@ -22,9 +22,9 @@ This is a Git Hub repository for the NU Coding Bootcamp Food Logger with MySQL, 
   npm i
 ```
 
-3. Load feedharvey-schema and update password in connection file. 
+3. Load schemafh.sql and update password in connection file in mysql workbench.
 
-    (Optional) To test with seed file, load feedharvey-seed from /db folder and follow instructions. 
+    (Optional) Load seedsfh.sql from /db folder in mysql workbench.
 
 4. Run in command line with node server.js
 
@@ -34,7 +34,7 @@ Also see: [Cloning a repository](https://help.github.com/en/github/creating-clon
 
 # Usage
 
-The Feed Harvey app is a plant-feeding app that uses node, handlebars, express and mysql. It allows users to add food to the site and click a button to indicate the food they entered has been eaten by the plant. All food - devoured or not - will be stored in a sql database.
+The Feed Harvey app is a plant-feeding app that uses node, handlebars, express and mysql. It allows users to add food to the site and click a button to indicate the food they entered has been eaten by "Harvey." All food - devoured or not - will be stored in a sql database.
 
 Application can initiated in the command line. For this example, Heroku is used the run the application in the browser.
 

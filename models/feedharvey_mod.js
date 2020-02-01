@@ -15,6 +15,7 @@ const food = {
       callbackF(result);
 
     });
+    
   },
 
     //takes sql columns to be updated, values to match columns, passes to orm m and returns data once complete
@@ -38,7 +39,7 @@ const food = {
       });
 
     }
-
+    
 }
 
 //export so that it can be used in other files

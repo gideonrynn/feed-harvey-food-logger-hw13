@@ -2,6 +2,7 @@ body {
     background-color: lightskyblue;
 }
 
+
 .jumbotron {
     text-align: center;
     background-color: #8FBC8F;
@@ -25,8 +26,8 @@ body {
 
   #harvey {
     display: block;
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
     margin: auto;
   }
 
