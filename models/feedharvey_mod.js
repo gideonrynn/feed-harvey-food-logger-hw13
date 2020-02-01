@@ -1,38 +1,46 @@
-//**In Progress */
 
-//this file will contain all the "instructions" for what should be sent to the sql queries in orm that will ultimately be rendered in the index
+// console.log(`Connected to feedharvey_mod.js`);
 
-console.log(`Connected to feedharvey_mod.js`);
-
+//Dependencies
 const orm = require("../config/orm");
 
 const food = {
 
-    //set function that will pass the food table and callback function into the orm call so that it may run the query and return data from the database
-    modselectAll: function(cb) {
+  //method that will pass the food table and callback function into the orm m so that it may run the query once data return - all from db
+  modselectAll: function(callbackF) {
 
-        orm.ormselectAll("food", function(res) {
+    orm.ormselectAll("food", function(result) {
+
+      //return data once food table passed in
+      callbackF(result);
+
+    });
+  },
+
+    //takes sql columns to be updated, values to match columns, passes to orm m and returns data once complete
+    modinsertOne: function(columns, values, callbackF) {
+
+      orm.orminsertOne("food", columns, values, function(result) {
             
-            cb(res);
+        callbackF(result);
 
-        });
+      });
+
     },
 
-    modinsertOne: function(cols, vals, cb) {
+    //takes column and value object (in this app specifically devoured 1/true), id of food item to be updated, passes to orm m and returns data once complete
+    modupdateOne: function(columnValue, foodID, callbackF) {
 
-        orm.orminsertOne("food", cols, vals, function(res) {
-            
-          cb(res);
+      orm.ormupdateOne("food", columnValue, foodID, function(result) {
 
-        });
+        callbackF(result);
 
-      }
+      });
 
-    // orm.selectAll()
-    // orm.insertOne()
-    // orm.updateOne()
-    
+    }
+
 }
 
+//export so that it can be used in other files
 module.exports = food;
 

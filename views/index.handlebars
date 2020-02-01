@@ -5,25 +5,6 @@
   <h3 class="display-6">Harvey is Hungry</h2>
   <h1 class="display-2">Feed Harvey</h1>
 
-  <div id="forminput" class="justify-content-center">
-    
-    <form class="create-form">
-
-        <div class="input-group">
-          
-          <input id="addfeed" class="form-control">
-
-          <span class="input-group-btn">
-              <button class="btn btn-info" id="add" type="submit">Add to Feed</button>
-          </span>
-        </div>
-
-      </form>
-
-  </div>
-
-
-
   
 </div>
 
@@ -33,44 +14,61 @@
 
     <div class="col col-submit">
 
-      {{!-- <h3>Add food for Harvey:</h3> --}}
-          
-    
     </div>
       
   </div>
   
   <div class="row">
+
+    {{!-- Devoured False/0 Column with input --}}
+    <div class="col-sm-4 col-md-4 col-lg-4">
+
+      <h4>Feed:</h4>
+
+      <div id="forminput" class="justify-content-center">
     
+        <form class="create-form">
 
-    {{!-- Col Not-Devoured --}}
+          <div class="input-group">
+                      
+            <input id="addfeed" class="form-control">
 
-        <div class="col-sm-4 col-md-4 col-lg-4">
-          {{!-- add list of items that have not been devoured here --}}
-          {{!-- when a database item devoured is marked as false, goes in this space --}}
+              <span class="input-group-btn">
 
-          <h4>Feed:</h4>
+                <button class="btn btn-info" id="add" type="submit">Add</button>
 
-          <ol>
-            {{!-- Use each to display every item in the [insertname] array --}}
-            {{#each foodObj }}
-            {{#unless devoured}}
+              </span>
+              
+          </div>
+
+        </form>
+
+      </div>
+
+      <ol>
+        
+        {{!-- Use each to display every item in Food Obj--}}
+        {{#each foodObj }}
+        
+          {{!-- if false, render --}}
+          {{#unless devoured}}
 
             <li><span>{{ food_name }}</span>
             <button data-id="{{id}}" class="feed-harvey">Feed Harvey</button></li>
 
-             {{/unless}}
+          {{/unless}}
 
-            {{/each}}
+        {{/each}}
 
-          </ol>
+      </ol>
         
-        </div>
+        {{!-- end column 1 --}}
+    </div>
 
 
-         {{!-- Column Harvey --}}
+    {{!-- Column Harvey img --}}
       
-      {{!-- https://happydorid.tumblr.com/post/148484344109/plant-friend --}}
+    {{!-- https://happydorid.tumblr.com/post/148484344109/plant-friend --}}
 
       <div class="col-sm-4 col-md-4 col-lg-4">
 
@@ -79,31 +77,32 @@
       </div>
 
 
-        {{!-- Col Devoured --}}
+    {{!-- Devoured True/1 Column --}}
 
-        <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="col-sm-4 col-md-4 col-lg-4">
 
-          {{!-- add list of items that have not been devoured here --}}
-          {{!-- when a database item devoured is marked as false, goes in this space --}}
+      <h4>Fed:</h4>
 
-          <h4>Fed:</h4>
+      <ol>
+        {{!-- Use each to display every item in foodObj --}}
+        {{#each foodObj }}
+        
+          {{!-- if true, render --}}
+          {{#if devoured}}
 
-          <ol>
-            {{!-- Use each to display every item in the [insertname] array --}}
-            {{#each foodObj }}
-              {{#if devoured}}
-                <li>{{ food_name }}</li>
-              {{/if}}
-            {{/each}}
+            <li>{{ food_name }}</li>
 
-            {{!-- <hr> --}}
-          </ol>
+          {{/if}}
+          
+        {{/each}}
 
-        </div>
+      </ol>
+
+    </div>
 
 
   {{!-- end row --}}
   </div>
 
-
+{{!-- end container --}}
 </div>

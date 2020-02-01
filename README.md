@@ -1,5 +1,5 @@
-# feed-harvey-food-logger-scd-hw12
-This is a Git Hub repository for the NU Coding Bootcamp Burger Logger with MySQL, Node, Express, Handlebars, ORM Homework for Week 13.
+# feed-harvey-food-logger-scd-hw13
+This is a Git Hub repository for the NU Coding Bootcamp Food Logger with MySQL, Node, Express, Handlebars, ORM Homework for Week 13.
 
 
 ![feed harvey app screenshot](public/assets/images/feedharveyapp.jpg)
@@ -14,7 +14,7 @@ This is a Git Hub repository for the NU Coding Bootcamp Burger Logger with MySQL
 1. Once logged in with [GitHub account](https://github.login/), clone the repo locally using link:
 
   ```sh
-    git clone https://github.com/gideonrynn/teampacr-profile-generator-hw7.git
+    git clone https://github.com/gideonrynn/feed-harvey-food-logger-hw13.git
   ```
 
 2. Install dependencies:

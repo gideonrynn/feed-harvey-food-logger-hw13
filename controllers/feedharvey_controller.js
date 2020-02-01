@@ -1,31 +1,23 @@
-//**In Progress */
-//Set up initial get route at index
+
 //see documentation at http://expressjs.com/en/guide/routing.html
 
-console.log(`Connected to feedharvey_controller.js`);
+// console.log(`Connected to feedharvey_controller.js`);
 
+// Dependencies
 const express = require("express");
 const foodMod = require("../models/feedharvey_mod");
 
+//create route handler
 const router = express.Router()
 
-// middleware that is specific to this router
-// router.use(function timeLog (req, res, next) {
-//   console.log('Time: ', Date.now())
-//   next()
-// });
 
-// define the home page route
 router.get('/', function (req, res) {
 
-  // res.send('This is the homepage')
-  // res.render("index", tbd);
-
-  //take the callback defined in model, and the data collected from sql, and send it to the index
+  //take data collected from sql, and send it to the index
   foodMod.modselectAll(function(data) {
 
     //create object that will be rendered in handlebars index with the data pulled back from the db
-    const datatorender = {
+    let datatorender = {
       foodObj: data
     };
 
@@ -36,41 +28,67 @@ router.get('/', function (req, res) {
   
 });
 
+//will display json format all food data
 router.get("/api/food", function (req, res) {
 
-  //take the callback defined in model, and the data collected from sql, and send it to the index
+  //take the callback defined in model, and the data collected from sql, and send it to browser at api/food
   foodMod.modselectAll(function(data) {
 
-    //send data to browser
     res.send(data);
 
   })
   
 });
 
-
+//post route for cre/saving new food entry
 router.post("/api/food", function(req, res) {
 
-  // need req.body with variables
+  // need req.body with variables - fixed undefined req.body with body parser
   // console.log(req.body);
   // console.log(req.body.food);
   // console.log(req.body.devoured);
 
     foodMod.modinsertOne(
-      ["food_name", "devoured"], 
-      [ req.body.food, req.body.devoured ], 
-      function(result) {
-        console.log(result);
 
-      // Send back the ID of the new food that input
-      //id is what we created as a placeholder placed in the index**************
-      res.json({ id: result.insertId });
+      //pass in table column names 
+      ["food_name", "devoured"], 
+
+      // and the values from the data sent (req)
+      [ req.body.food, req.body.devoured ], 
+
+      function(result) {
+
+      //send new id with new note
+      res.json({ id: result.newID });
     });
   
 });
 
-router.delete("/api/food/:id", function(req, res) {
-  // need req.params.id
+//route for updating food entry by id passed in
+router.put("/api/food/:id", function(req, res) {
+
+  // set variable that includes parameter from the request
+  let foodID = "id = " + req.params.id;
+
+
+  //can access the req body here =1/true
+  foodMod.modupdateOne(
+    { devoured: req.body.devoured }, 
+    foodID, 
+    
+    function(result) {
+    
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+
+    } else {
+
+      res.status(200).end();
+    }
+    
+  });
+
 });
 
 
