@@ -2,9 +2,14 @@
 //dependencies
 const mysql = require('mysql');
 const pw = require('./p');
+const connection;
 
-// create the connection for mysql db
-const connection = mysql.createConnection({
+// create the connection for mysql db with jawsdb_url
+
+if (process.env.JAWSDB_URL) {
+ connection = mysql.createConnection(process.env.JAWSDB_URL); 
+} else {
+connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
@@ -14,7 +19,8 @@ const connection = mysql.createConnection({
   
     //Schema and seed in the db folder
     database: "feedharvey_db"
-});
+  })
+};
 
 // connect to server and db, and console.log once connected
 connection.connect(function(err) {
