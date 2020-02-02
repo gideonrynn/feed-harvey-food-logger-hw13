@@ -1,7 +1,6 @@
 
 //dependencies
 const mysql = require('mysql');
-const pw = require('./p');
 var connection;
 if (process.env.JAWSDB_URL) {
  connection = mysql.createConnection(process.env.JAWSDB_URL); 
@@ -12,7 +11,7 @@ connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: pw,
+    password: "",
   
     //Schema and seed in the db folder
     database: "feedharvey_db"
