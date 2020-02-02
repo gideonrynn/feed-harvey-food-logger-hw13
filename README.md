@@ -6,7 +6,7 @@ This is a Git Hub repository for the NU Coding Bootcamp Food Logger with MySQL, 
 ![feed harvey app gif](public/assets/images/feedharveyapp.gif)
 
 # Deployed Application Link
-*enter heroku link
+https://fathomless-lake-45236.herokuapp.com/
 
 
 # Setup
