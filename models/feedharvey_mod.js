@@ -38,7 +38,18 @@ const food = {
 
       });
 
-    }
+    },
+
+    moddeleteAll: function(columnValue, callbackF) {
+
+      orm.ormdeleteAll("food", columnValue, function(result) {
+  
+        //return data once food table passed in
+        callbackF(result);
+  
+      });
+      
+    },
     
 }
 

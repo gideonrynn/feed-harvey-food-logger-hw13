@@ -110,6 +110,19 @@ const orm = {
 
         });
 
+    },
+
+     // query database and delete all records that have devoured 1/true 
+    ormdeleteAll: function(table, columnValue, callbackF) {
+
+      let daquery = "DELETE FROM " + table + " where " + objToSql(columnValue);
+  
+      //connect to database and return data once query complete
+      connection.query(daquery, function(err, result) {
+        if (err) { throw err }
+  
+        callbackF(result);
+      });
     }
 
 }

@@ -11,7 +11,7 @@ connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: "",
+    password: "NUBC01root!",
   
     //Schema and seed in the db folder
     database: "feedharvey_db"

@@ -13,22 +13,17 @@ body {
     padding-top: 2rem;
   }
 
-
-  .col-submit {
-    display: flex;
-    margin: 30px;
-    padding: 80px;
-    text-align: center;
-  }
-
   #harvey {
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
   }
 
   #forminput {
     display: flex;
     padding: 10px;
+    margin: 15px;
   }
 
   .input {
@@ -37,3 +32,32 @@ body {
   }
 
 
+  h4 {
+    text-align: center;
+  }
+
+  #deleteall {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+#feedme {
+  visibility: visible;
+}
+
+li {
+  margin: 5px;
+}
+
+.fed {
+  background-color:lightgray;
+  color:black;
+}
+
+p {
+  margin-top: 10px;
+  text-align: center;
+}

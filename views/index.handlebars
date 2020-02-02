@@ -9,23 +9,11 @@
 </div>
 
 <div class="container">
-
-  <div class="row mx-auto">
-
-    <div class="col col-open">
-      
-      {{!-- <span class="feedme">Feed Me!</span> --}}
-        
-    </div>
-      
-  </div>
   
-  <div class="row">
+  <div class="row justify-content-center">
 
     {{!-- Devoured False/0 Column with input --}}
     <div class="col-sm-4 col-md-4 col-lg-4">
-
-      <h4>Feed:</h4>
 
       <div id="forminput" class="justify-content-center">
     
@@ -37,7 +25,7 @@
 
               <span class="input-group-btn">
 
-                <button class="btn btn-info" id="add" type="submit">Add</button>
+                <button class="btn btn-info" id="add" type="submit">Add Food</button>
 
               </span>
               
@@ -47,7 +35,9 @@
 
       </div>
 
-      <ol>
+       <hr>
+
+      <ol id="not-devoured">
         
         {{!-- Use each to display every item in Food Obj--}}
         {{#each foodObj }}
@@ -56,7 +46,7 @@
           {{#unless devoured}}
 
             <li><span>{{ food_name }}</span>
-            <button data-id="{{id}}" class="feed-harvey">Feed Harvey</button></li>
+            <button data-id="{{id}}" class="feed-harvey btn btn-info">Feed Harvey</button></li>
 
           {{/unless}}
 
@@ -76,27 +66,33 @@
 
         {{!-- <p class="feedme">Feed Me!</p> --}}
 
-        <img id="harvey" src="/assets/images/harvey.jpg" height={{imgSize}} width={{imgSize}}>
+        <img id="harvey" src="/assets/images/harvey.jpg" height={{imgSize}} width={{imgSize}} alt="Harvey Plant Image">
 
-        {{!-- <p class="feedme">Feed Me!</p> --}}
+        <p id="feedme">Feed Me!</p>
 
       </div>
 
 
     {{!-- Devoured True/1 Column --}}
 
-    <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="col-sm-4 col-md-4 col-lg-4 align-content-center">
 
-      <h4>Fed:</h4>
+      {{!-- <h4>Fed</h4> --}}
+      
+      
+      
+      <button class="btn btn-info" id="deleteall" type="submit">Digest Food</button>
 
-      <ol>
+      <hr>
+
+      <ol id="devoured">
         {{!-- Use each to display every item in foodObj --}}
         {{#each foodObj }}
         
           {{!-- if true, render --}}
           {{#if devoured}}
 
-            <li>{{ food_name }}</li>
+            <li><span>{{ food_name }}</span> <button data-id="{{id}}" class="fed btn" disabled>Fed</button></li>
 
           {{/if}}
           

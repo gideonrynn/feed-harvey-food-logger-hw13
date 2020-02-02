@@ -34,7 +34,7 @@ Also see: [Cloning a repository](https://help.github.com/en/github/creating-clon
 
 # Usage
 
-The Feed Harvey app is a plant-feeding app that uses node, handlebars, express and mysql. It allows users to add food to the site and click a button to indicate the food they entered has been eaten by "Harvey," who will grow in size eat time when fed. All food - devoured or not - will be stored in a sql database.
+The Feed Harvey app is a plant-feeding app that uses node, handlebars, express and mysql. It allows users to add food to the site and click a button to indicate the food they entered has been eaten by "Harvey," who will grow in size each time when fed. All food - devoured or not - will be stored in a sql database.
 
 Application can initiated in the command line. For this example, Heroku is used the run the application in the browser.
 
@@ -53,6 +53,9 @@ This project was built using:
 
 Plant friend art by Heather Penn
 https://happydorid.tumblr.com/post/148484344109/plant-friend 
+
+Plant Monster art by VegasMike
+https://www.deviantart.com/vegasmike/art/Plant-Monster-295482911
 
 # License
 

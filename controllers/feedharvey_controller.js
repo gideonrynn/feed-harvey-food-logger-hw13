@@ -24,7 +24,7 @@ router.get('/', function (req, res) {
       }
     }
 
-    let valSize = (devoured.length * 11) + 92 + 'px';
+    let valSize = (devoured.length * 20) + 92 + 'px';
     
 
     //create object that will be rendered in handlebars index with the data pulled back from the db
@@ -99,6 +99,19 @@ router.put("/api/food/:id", function(req, res) {
       res.status(200).end();
     }
     
+  });
+
+});
+
+router.delete("/api/food", function(req, res) {
+
+  //pass in what is contained in the rows that need to be deleted
+  foodMod.moddeleteAll({devoured : req.body.devoured}, function(result) {
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
   });
 
 });
