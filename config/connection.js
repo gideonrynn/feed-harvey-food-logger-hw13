@@ -2,10 +2,7 @@
 //dependencies
 const mysql = require('mysql');
 const pw = require('./p');
-const connection;
-
-// create the connection for mysql db with jawsdb_url
-
+var connection;
 if (process.env.JAWSDB_URL) {
  connection = mysql.createConnection(process.env.JAWSDB_URL); 
 } else {
