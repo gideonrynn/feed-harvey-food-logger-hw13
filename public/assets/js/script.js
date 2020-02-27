@@ -2,6 +2,60 @@
 
 $(function () {
 
+  
+  function init () {
+    
+    $("#feedme").fadeOut(3500);
+
+    //after document loads, check length of not-devoured and devoured lists and add appropriate text
+  
+    let harvey = $("#harvey");
+  
+    function growHarvey () {
+      harvey.animate({
+        height: '+=' + '7' + 'px',
+        width: '+=' + '7' + 'px'
+        }, 'slow');
+    }
+  
+    if ($("#not-devoured li").length === 0) {
+      $("#not-devoured").append("<p>Add Food For Harvey to Eat!</p>");
+    } 
+  
+    if ($("#devoured li").length === 0) {
+      $("#devoured").append("<p>Feed Harvey!</p>");
+    }
+  
+    if ($("#devoured li").length < 3) {
+      growHarvey();
+      $("#harvey").attr("src", "./assets/images/harvey.jpg");
+      $("#feedme").css("font-size", "15px");
+  
+    }
+    
+    if ($("#devoured li").length >= 3 && $("#devoured li").length <= 5 ) {
+      growHarvey();
+      $("#harvey").attr("src", "./assets/images/harvey_mouth.jpg");
+      $("#feedme").css("font-size", "25px");
+    }
+  
+    if ($("#devoured li").length >= 6 && $("#devoured li").length <= 8 ) {
+      growHarvey();
+      $("#harvey").attr("src", "./assets/images/harvey_spiky.jpg");
+      $("#feedme").css("font-size", "40px");
+    }
+  
+    if ($("#devoured li").length >= 9) {
+      harvey.animate({
+        height: '+=' + '60' + 'px',
+        width: '+=' + '60' + 'px'
+        }, 'slow');
+      $("#harvey").attr("src", "./assets/images/harvey_monster.jpg");
+      $("#feedme").css("font-size", "70px");
+    }  
+
+  };
+
   $("#add").on("click", function(event) {
        
     //prevent actions from click until add button is explicitly clicked
@@ -105,54 +159,9 @@ $(function () {
     );
   
   });
-
-  $("#feedme").fadeOut(3500);
-
-  //after document loads, check length of not-devoured and devoured lists and add appropriate text
-
-  let harvey = $("#harvey");
-
-  function growHarvey () {
-    harvey.animate({
-      height: '+=' + '7' + 'px',
-      width: '+=' + '7' + 'px'
-      }, 'slow');
-  }
-
-  if ($("#not-devoured li").length === 0) {
-    $("#not-devoured").append("<p>Add Food For Harvey to Eat!</p>");
-  } 
-
-  if ($("#devoured li").length === 0) {
-    $("#devoured").append("<p>Feed Harvey!</p>");
-  }
-
-  if ($("#devoured li").length < 3) {
-    growHarvey();
-    $("#harvey").attr("src", "./assets/images/harvey.jpg");
-    $("#feedme").css("font-size", "15px");
-
-  }
   
-  if ($("#devoured li").length >= 3 && $("#devoured li").length <= 5 ) {
-    growHarvey();
-    $("#harvey").attr("src", "./assets/images/harvey_mouth.jpg");
-    $("#feedme").css("font-size", "25px");
-  }
-
-  if ($("#devoured li").length >= 6 && $("#devoured li").length <= 8 ) {
-    growHarvey();
-    $("#harvey").attr("src", "./assets/images/harvey_spiky.jpg");
-    $("#feedme").css("font-size", "40px");
-  }
-
-  if ($("#devoured li").length >= 9) {
-    harvey.animate({
-      height: '+=' + '60' + 'px',
-      width: '+=' + '60' + 'px'
-      }, 'slow');
-    $("#harvey").attr("src", "./assets/images/harvey_monster.jpg");
-    $("#feedme").css("font-size", "70px");
-  }
+  //run when the page loads
+  init();
+  
 
 });
