@@ -36,7 +36,7 @@ Also see: [Cloning a repository](https://help.github.com/en/github/creating-clon
 
 The Feed Harvey app is a plant-feeding app that uses node, handlebars, express and mysql. It allows users to add food to the site and click a button to indicate the food they entered has been eaten by "Harvey," who will grow in size each time when fed. All food - devoured or not - will be stored in a sql database.
 
-Application can initiated in the command line. For this example, Heroku is used the run the application in the browser.
+Application can initiated in the command line. For this example, Heroku is used to run the application in the browser.
 
 
 # Technologies
